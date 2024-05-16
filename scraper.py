@@ -25,6 +25,10 @@ WebDriverWait(driver, 10).until(
 products = driver.find_elements(By.CLASS_NAME, 'prd.card_full')
 price = driver.find_element(By.CLASS_NAME, 'curr').text.replace('₦', '')
 
+for product in products:
+    if price <= '200,000':
+        cart_button = driver.find_element(By.CLASS_NAME, '.btn._prim.fw._sm')
+        cart_button.click()
 time.sleep(10)
 
 driver.quit()
