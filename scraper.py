@@ -19,6 +19,12 @@ search_field = driver.find_element(By.NAME, 'q')
 search_field.clear()
 search_field.send_keys("Dell Inspiron 15", Keys.ENTER)
 
+WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.CLASS_NAME, 'prd.card_full'))
+)
+products = driver.find_elements(By.CLASS_NAME, 'prd.card_full')
+price = driver.find_element(By.CLASS_NAME, 'curr').text.replace('₦', '')
+
 time.sleep(10)
 
 driver.quit()
