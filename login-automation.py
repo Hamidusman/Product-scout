@@ -33,5 +33,6 @@ password = login_element.find_element(By.ID, 'password').send_keys('Password123'
 submit = login_element.find_element(By.ID, 'submit')
 
 submit.click()
+
 time.sleep(10)
 driver.quit()
