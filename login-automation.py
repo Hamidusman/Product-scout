@@ -19,6 +19,13 @@ driver.get(url)
 links = driver.find_element(By.ID, "menu-item-20")
 links.click()
 
+WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.TAG_NAME, 'article'))
+)
+
+container = driver.find_element(By.TAG_NAME, 'article')
+link = container.find_element(By.TAG_NAME, 'a')
+link.click()
 
 time.sleep(10)
 driver.quit()
