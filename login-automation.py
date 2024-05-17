@@ -16,6 +16,9 @@ service = Service(executable_path="chromedriver.exe")
 driver = webdriver.Chrome(service=service)
 driver.get(url)
 
+links = driver.find_element(By.ID, "menu-item-20")
+links.click()
+
 
 time.sleep(10)
 driver.quit()
