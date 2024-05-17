@@ -30,9 +30,7 @@ link.click()
 login_element = driver.find_element(By.ID, 'form')
 username = login_element.find_element(By.ID, 'username').send_keys('student')
 password = login_element.find_element(By.ID, 'password').send_keys('Password123')
-submit = login_element.find_element(By.ID, 'submit')
-
-submit.click()
+submit = login_element.find_element(By.ID, 'submit').click()
 
 time.sleep(10)
 driver.quit()
